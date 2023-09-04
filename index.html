@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" class="notranslate" translate="no">
+  <head>
+    <title>Mord Voice - Proximity Voice Chat</title>
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <script src="can-autoplay.js"></script>
+    <script src="socketio.js"></script>
+    <script src="audiofeeder.js"></script>
+    <script src="sender.js"></script>
+    <script src="receiver.js"></script>
+    <script src="voiceuser.js"></script>
+  </head>
+  <body>
+    <div id="main-container">
+      <h1 id="default-h1">Mord <img src="mic.png" alt="microphone icon" draggable="false" ondragstart="return false;"> Voice</h1>
+      <h1 id="mobile-h1"><img src="mic.png" alt="microphone icon" draggable="false" ondragstart="return false;"></h1>
+      <div id="main-box" class="launch">
+        <div id="launch-button" onclick="launch()">
+            <img src="play.png" alt="launch button" draggable="false" ondragstart="return false;"></img>
+        </div>
+        <div id="tip">TIP: You can skip this step by turning on <a href="https://championcr.com/topic/enable-auto-play/" target="_blank" rel="noopener noreferrer">Sound Autoplay</a> for this site</div>
+        <div id="loading">
+            <img src="loading.png" alt="launch button" draggable="false" ondragstart="return false;"></img>
+        </div>
+        <div id="status">
+            <div id="status-box">
+                <span id="status-message">Connected to <b>UNKNOWN ERROR</b></span>
+            </div>
+            <div id="status-controls">
+                <div id="status-volume">
+                    <div class="volume-container">
+                      <button class="volume-button">
+                        <img src="volume.png" alt="volume button" draggable="false" ondragstart="return false;"></img>
+                      </button>
+                      <div class="volume-slider">
+                        <div class="volume-slider-inner">
+                          <input orient="vertical" type="range" min="0" max="2" value="1" step=".01" class="slider" id="volumeRange">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div id="status-settings">
+                    <div class="settings-container">
+                      <button class="settings-button">
+                          <img src="settings.png" alt="settings button" draggable="false" ondragstart="return false;"></img>
+                      </button>
+                      <div class="settings-popup">
+                        <div class="settings-popup-inner">
+                          <div class="noise-suppression">
+                            <div class="checkbox-label">
+                              <span>Noise Suppression</span>
+                            </div>
+                            <div class="checkbox-wrapper">
+                              <label for="cbx-noise" class="cbx">
+                                <div class="checkmark">
+                                <input type="checkbox" id="cbx-noise">
+                                <div class="flip">
+                                  <div class="front"></div>
+                                    <div class="back">
+                                      <svg viewBox="0 0 16 14" height="14" width="16">
+                                        <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="echo-cancellation">
+                            <div class="checkbox-label">
+                              <span>Echo Cancellation</span>
+                            </div>
+                            <div class="checkbox-wrapper">
+                              <label for="cbx-echo" class="cbx">
+                                <div class="checkmark">
+                                <input type="checkbox" id="cbx-echo">
+                                <div class="flip">
+                                  <div class="front"></div>
+                                    <div class="back">
+                                      <svg viewBox="0 0 16 14" height="14" width="16">
+                                        <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="input-device">
+                            <div class="checkbox-label">
+                              <span>Input Device</span>
+                            </div>
+                            <div class="dropdown-wrapper">
+                              <button class="dropbtn" id="dropdown-current" title="Default">Default</button>
+                              <div class="dropdown-content" id="dropdown-entries"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div id="tip2">You're all set! Leave this tab open and head back into game</div>
+      </div>
+      <h3>Made with <i class="icon ion-heart"></i> by <a href="https://discord.gg/dejFwzP9Tb" target="_blank" rel="noopener noreferrer">TheSaltySeaCow</a></h3>
+    </div>
+  </body>
+</html>
